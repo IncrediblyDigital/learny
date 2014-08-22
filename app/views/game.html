@@ -1,0 +1,23 @@
+<div ng-controller="GameCtrl">
+  <h1>{{gameTitle}}</h1>
+  <div class="alert" ng-class="{'alert-info': lastCorrect === undefined, 'alert-success': lastCorrect, 'alert-danger': lastCorrect === false}">{{message}}</div>
+  <h2>Current Letter: {{currentLetter}}</h2>
+  <div class="row">
+    <div class="col-sm-3" ng-repeat="letter in givenAnswers">
+      <a class="btn btn-primary btn-block" ng-click="checkAnswer(letter)">{{letter}}</a>
+    </div>
+  </div>
+  <div class="row" style="padding-top:1em">
+    <div class="col-sm-12">
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: {{progress}}%"></div>
+      </div>
+      <div class="progress">
+        <div class="progress-bar progress-bar-success" role="progressbar" style="width: {{rightAnswers}}%"></div>
+      </div>
+      <div class="progress">
+        <div class="progress-bar progress-bar-danger" role="progressbar" style="width: {{wrongAnswers}}%"></div>
+      </div>
+    </div>
+  </div>
+</div>

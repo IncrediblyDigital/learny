@@ -388,6 +388,20 @@ module.exports = function (grunt) {
         configFile: 'test/karma.conf.js',
         singleRun: true
       }
+    },
+
+    buildcontrol: {
+      options: {
+        dir: 'dist',
+        commit: true,
+        push: true
+      },
+      github: {
+        options: {
+          remote: 'git@github.com:IncrediblyDigital/learny.git',
+          branch: 'gh-pages'
+        }
+      }
     }
   });
 

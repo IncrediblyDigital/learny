@@ -23,6 +23,11 @@ $alert-success-bg: $yellow-color;
 
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap/theme.scss";
 
+// Angular elements to be hidden on load
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
 .container-fluid {
   max-width: 1170px;
 }

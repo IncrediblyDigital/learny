@@ -1,23 +1,63 @@
 <div ng-controller="GameCtrl as ctrl">
-  <h1>{{ctrl.gameTitle}}</h1>
-  <div class="alert" ng-class="{'alert-info': lastCorrect === undefined, 'alert-success': lastCorrect, 'alert-danger': lastCorrect === false}">{{ctrl.message}}</div>
-  <h2>Current Letter: {{ctrl.currentLetter}}</h2>
-  <div class="row">
-    <div class="col-sm-3" ng-repeat="letter in ctrl.givenAnswers">
-      <a class="btn btn-primary btn-block" ng-click="ctrl.checkAnswer(letter)">{{letter}}</a>
+  
+  <div id="intro" class="col-xs-6 col-md-4 shadow">
+    <h1 style="text-align:center;">{{ctrl.gameTitle}}</h1>
+    <h2 style="text-align:center;">Learning ABC's</h2>
+    
+    <div style="padding-top:1.5em">
+     <div id="alert" class="alert" ng-class="{'alert-info': ctrl.lastCorrect === undefined, 'alert-success':  ctrl.lastCorrect, 'alert-danger':  ctrl.lastCorrect === false}">{{ctrl.message}}</div>
+  
+      <div class="col-sm-6 text-right">
+       <p>Progress</p>
+       <p>percent correct</p>
+       <p>wrong answers</p>
+      </div>
+     
     </div>
-  </div>
-  <div class="row" style="padding-top:1em">
-    <div class="col-sm-12">
+     
+    <div class="col-sm-6">
       <div class="progress">
-        <div class="progress-bar" role="progressbar" style="width: {{ctrl.progress}}%"></div>
+        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: {{ctrl.progress}}%"></div>
       </div>
       <div class="progress">
-        <div class="progress-bar progress-bar-success" role="progressbar" style="width: {{ctrl.rightAnswers}}%"></div>
+        <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" style="width: {{ctrl.rightAnswers}}%"></div>
       </div>
       <div class="progress">
-        <div class="progress-bar progress-bar-danger" role="progressbar" style="width: {{ctrl.wrongAnswers}}%"></div>
+        <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" style="width: {{ctrl.wrongAnswers}}%"></div>
       </div>
+    
     </div>
+    <div class="col-sm-6 text-right">
+     
+         <p>{{ctrl.remainingQuestions}} Questions Left</p>
+     <p></p>
+     <p></p>
+    </div>
+    <div class="col-sm-12 new-game">
+      <p></p>
+         <code>Play Again!</code>
+         <a class="btn btn-warning btn-block" href="" onclick="location.reload();" >NEW GAME</a>
+    </div>
+    
   </div>
+  
+  <div class="col-xs-12 col-md-8">
+    <h3 style="text-align:center;">
+      <span class="current-letter">{{ctrl.currentLetter}}</span>
+    </h3>
+    <!-- <h4 style="text-align:center;"></h4> -->
+    <div id="letters" class="row">
+   
+      <div class="col-xs-6" ng-repeat="letter in ctrl.givenAnswers">
+        <p class="text-center "><a ng-click="ctrl.checkAnswer(letter)">{{letter}}
+          <br/>
+          <img ng-src="images/{{letter}}.png" />
+        </a></p>
+      </div>
+   
+  </div>
+  
+  
+  
+  
 </div>

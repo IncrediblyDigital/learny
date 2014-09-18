@@ -1,4 +1,22 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+$primary-color: #2fa3eb;
+$red-color: #da1f26;
+$blue-color: #00adee;
+$green-color: #a2be4a;
+$pink-color: #e64093;
+$black-color: #121112;
+$grey-color:#515051;
+$purple-color: #ac00ee;
+$yellow-color: #eec200;
+$brand-primary:$blue-color;//** Default progress bar color
+$brand-success:$green-color;//** Success progress bar color
+$brand-warning:$red-color;//** Warning progress bar color
+$brand-danger:$red-color;//** Danger progress bar color
+$brand-info:$brand-primary;//** Info progress bar color
+$alert-success-bg: $yellow-color;
+
+@import "custom-mixins";
+
 // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap.scss";
 // endbower
@@ -8,3 +26,61 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 .container-fluid {
   max-width: 1170px;
 }
+
+.current-letter {
+  font-size: 100px;
+  color:$green-color;
+  font-family: 'Short Stack', cursive;
+  text-shadow: 3px 0 0 rgba(0, 0, 255, 0.6);
+  @include threedeetext($green-color);
+ 
+}
+.col-sm-3 img{
+  width:260px;
+  height:220px;
+ 
+}
+#letters .col-xs-6 a {
+  font-size: 75px;
+  @extend .current-letter;
+}
+#letters .col-xs-6 a:hover {
+  text-decoration:none;
+  cursor:pointer;
+}
+#letters img {
+  width:75%;
+  height:75%;
+}
+#alert {
+  margin: 20px 0;
+}
+#intro {
+  background: $green-color;
+  margin:5px 0;
+  min-height: 715px;
+  
+}
+.shadow {
+  -moz-box-shadow:    1px 2px 2px 3px #ccc;
+  -webkit-box-shadow: 1px 2px 2px 3px #ccc;
+  box-shadow:         1px 2px 2px 3px #ccc;
+}
+.progress {
+  border:1px solid #8f8f8f;
+}
+.alert-success {
+  color: $black-color;
+}
+.new-game {
+  margin-top: 6em;
+  padding-top:5em;
+  min-height:175px;
+}
+.new-game a {
+  margin: 20px 0;
+  height: 44px;
+  font-size: 23px;
+}
+
+

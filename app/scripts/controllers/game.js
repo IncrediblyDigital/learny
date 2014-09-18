@@ -22,7 +22,7 @@ angular.module('learnyApp')
       self.rightAnswers = Math.floor((numRight/numAnswered)*100);
       self.wrongAnswers = Math.floor((numWrong/numAnswered)*100);
     };
-
+    
     var initLetter = function() {
       self.givenAnswers = [];
       currentLetter = remainingLetters.pop();

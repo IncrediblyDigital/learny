@@ -1,10 +1,10 @@
 <div ng-controller="GameCtrl as ctrl">
   
-  <div id="intro" class="col-xs-6 col-md-4 shadow">
+  <div id="intro" class="col-sm-3 shadow">
     <h1 style="text-align:center;">{{ctrl.gameTitle}}</h1>
-    <h2 style="text-align:center;">Learning ABC's</h2>
+    <!-- <h2 style="text-align:center;">Learning ABC's</h2> -->
     
-    <div style="padding-top:1.5em">
+    <div>
      <div id="alert" class="alert" ng-class="{'alert-info': ctrl.lastCorrect === undefined, 'alert-success':  ctrl.lastCorrect, 'alert-danger':  ctrl.lastCorrect === false}">{{ctrl.message}}</div>
   
       <div class="col-sm-6 text-right">
@@ -27,21 +27,16 @@
       </div>
     
     </div>
-    <div class="col-sm-6 text-right">
-     
-         <p>{{ctrl.remainingQuestions}} Questions Left</p>
-     <p></p>
-     <p></p>
-    </div>
+   <br><br>
     <div class="col-sm-12 new-game">
       <p></p>
          <code>Play Again!</code>
-         <a class="btn btn-warning btn-block" href="" onclick="location.reload();" >NEW GAME</a>
+         <a class="btn btn-warning btn-block" href="" onclick="location.reload();">NEW GAME</a>
     </div>
     
   </div>
   
-  <div class="col-xs-12 col-md-8">
+  <div class="col-sm-9">
     <h3 style="text-align:center;">
       <span class="current-letter">{{ctrl.currentLetter}}</span>
     </h3>

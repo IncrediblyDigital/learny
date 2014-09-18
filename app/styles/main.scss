@@ -13,7 +13,8 @@ $brand-success:$green-color;//** Success progress bar color
 $brand-warning:$red-color;//** Warning progress bar color
 $brand-danger:$red-color;//** Danger progress bar color
 $brand-info:$brand-primary;//** Info progress bar color
-$alert-success-bg: $yellow-color;
+$alert-success-bg: #ffffff;
+$alert-danger-bg: #ffffff;
 
 @import "custom-mixins";
 
@@ -23,17 +24,15 @@ $alert-success-bg: $yellow-color;
 
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap/theme.scss";
 
-// Angular elements to be hidden on load
-[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-  display: none !important;
-}
-
 .container-fluid {
-  max-width: 1170px;
+  max-width: 1024px;
 }
-
+h1, h2 {
+  margin:0;
+  padding:0;
+}
 .current-letter {
-  font-size: 100px;
+  font-size: 75px;
   color:$green-color;
   font-family: 'Short Stack', cursive;
   text-shadow: 3px 0 0 rgba(0, 0, 255, 0.6);
@@ -46,7 +45,7 @@ $alert-success-bg: $yellow-color;
  
 }
 #letters .col-xs-6 a {
-  font-size: 75px;
+  font-size: 50px;
   @extend .current-letter;
 }
 #letters .col-xs-6 a:hover {
@@ -54,8 +53,8 @@ $alert-success-bg: $yellow-color;
   cursor:pointer;
 }
 #letters img {
-  width:75%;
-  height:75%;
+  width:50%;
+  height:50%;
 }
 #alert {
   margin: 20px 0;
@@ -78,14 +77,22 @@ $alert-success-bg: $yellow-color;
   color: $black-color;
 }
 .new-game {
-  margin-top: 6em;
-  padding-top:5em;
-  min-height:175px;
+ // min-height:175px;
 }
 .new-game a {
-  margin: 20px 0;
   height: 44px;
-  font-size: 23px;
+  font-size: 20px;
+  text-align:center;
+  padding:6px 0 0 0;
 }
-
+.alert {
+  box-shadow:none;
+  border:none;
+  color: $black-color;
+  font-size: 12px;
+  font-weight:bold;
+}
+.alert-info {
+  background:none;
+}
 
